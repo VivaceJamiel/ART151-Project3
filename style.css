@@ -1,0 +1,41 @@
+#map {
+    height: 100%;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+#config {
+    left: 5px;
+    top: 5px;
+    background-color: #001d62bd;
+    color: white;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    text-align: center;
+    border-radius: 10px;
+    position: absolute;
+    /* top: 85%; */
+    left: 40%;
+}
+
+.custom-map-control-button {
+    background-color: #fff;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+    margin-top: 85%;
+    padding: 0 0.5em;
+    font: 400 18px Roboto, Arial, sans-serif;
+    overflow: hidden;
+    height: 40px;
+    width: auto;
+    cursor: pointer;
+  }
+  .custom-map-control-button:hover {
+    background: rgb(235, 235, 235);
+  }
+  
