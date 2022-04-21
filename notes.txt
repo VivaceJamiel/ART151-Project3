@@ -1,0 +1,18 @@
+let device;
+
+
+function colorKeys(
+device && device.send([0x90, key, clr]);
+
+for (var output of midiAccess.outputs.values()) {
+device = output;
+}
+
+function clearAll() {
+for (let i = 0; i < 100; i++) {
+colorKeys(i, 0)
+}
+}
+
+let p5_ = new p5();
+console.log(p5_.map(0.5, 0, 1, 

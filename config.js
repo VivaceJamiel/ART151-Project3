@@ -1,0 +1,3 @@
+CONFIG = {
+    PEXEL_API_KEY: '563492ad6f917000010000010cf0f84d6e1f49cdaefa48adcb3acfe9',
+}
