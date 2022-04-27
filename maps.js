@@ -1,4 +1,43 @@
 let map, infoWindow;
+let geocoder, resultsMap;
+
+function geocodeAddress(destination) {
+  geocoder.geocode( { 'address': destination}, function(results, status) {
+    if (status == 'OK') {
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+
+      let message = `<div class="info-window">
+      <h3>${destination}</h3>
+      <p>${results[0].formatted_address}</p>
+      </div>
+      <div>
+      <button>Let's Go</button>
+      </div>`;
+      ;
+
+
+      var infowindow = new google.maps.InfoWindow({
+          content: message
+      });
+
+      marker.addListener('click', function() {
+          infowindow.open({
+            anchor: marker,
+            map,
+            shouldFocus: false,
+          });
+      });
+      map.setZoom(10)
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+
+}
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
@@ -6,6 +45,8 @@ function initMap() {
     zoom: 8,
   });
   infoWindow = new google.maps.InfoWindow();
+
+  geocoder = new google.maps.Geocoder();
 
   const locationButton = document.createElement("button");
   locationButton.textContent = "Pan to Current Location";

@@ -1,5 +1,5 @@
 const getPicture = async (destination) => {
-    let arr = [20];
+    let arr = [];
     let ret;
     const photos = document.getElementById("photo").value = ""
     // PLAN TO MAKE ARRAY AND PUT INTO STORAGE. YOU WILL DISPLAY IMAGES IN COLLAGE.HTML
@@ -16,15 +16,15 @@ const getPicture = async (destination) => {
         .then(res => res.json())
         .then(data => {
             const randomPhoto = data.photos[Math.floor(Math.random() * data.photos.length)];
-            for (let i = 0; i < arr.length; i++) {
-                arr[i] = data.photos[i].src.medium;
+            for (let i = 0; i < 20; i++) {
+                arr.push(data.photos[i].src.medium);
             }
             const photoUrl = randomPhoto.src.large;
             const photo = document.createElement("img");
             photo.src = photoUrl;
             photo.alt = randomPhoto.photographer;
             photo.title = randomPhoto.photographer;
-            document.getElementById("photo").appendChild(photo);
+            window.sessionStorage.setItem("photos", arr);
         });
     }
 }

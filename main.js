@@ -3,6 +3,7 @@ const getDestination = () => {
     if (destination === "") {
         alert("Please enter a destination");
     } else {    
+        geocodeAddress(destination);
         getPicture(destination);
         getWeather(destination);
     }
