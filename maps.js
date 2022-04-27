@@ -10,15 +10,12 @@ function geocodeAddress(destination) {
           position: results[0].geometry.location
       });
 
-      let message = `<div class="info-window">
-      <h3>${destination}</h3>
-      <p>${results[0].formatted_address}</p>
-      </div>
+      let message = `
       <div>
-      <button>Let's Go</button>
+        <h3>${destination}</h3>
+        <p>${results[0].formatted_address}</p>
+        <button onclick="go()">Let's Go</button>
       </div>`;
-      ;
-
 
       var infowindow = new google.maps.InfoWindow({
           content: message
@@ -33,7 +30,17 @@ function geocodeAddress(destination) {
       });
       map.setZoom(10)
     } else {
-      alert('Geocode was not successful for the following reason: ' + status);
+      if (status == 'ZERO_RESULTS') {
+        alert('No results found');
+      } else if (status == 'OVER_QUERY_LIMIT') {
+        alert('Query limit reached');
+      } else if (status == 'REQUEST_DENIED') {
+        alert('Request denied');
+      } else if (status == 'INVALID_REQUEST') {
+        alert('Invalid request');
+      } else {
+        alert('Unknown error');
+      }
     }
   });
 

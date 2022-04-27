@@ -8,3 +8,7 @@ const getDestination = () => {
         getWeather(destination);
     }
 }
+
+const go = () => {
+    window.location.href = "collage.html";
+}
