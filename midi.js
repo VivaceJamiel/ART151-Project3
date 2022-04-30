@@ -1,3 +1,5 @@
+let device
+
 if (navigator.requestMIDIAccess) {
     navigator.requestMIDIAccess().then(success, failure);
 }
@@ -17,20 +19,70 @@ function success(midiAccess) {
         console.log(input)
         input.addEventListener('midimessage', handleInput);
     })
+    for (var output of midiAccess.outputs.values()) {
+        device = output;
+    }
+}
+
+function colorKeys(key, clr) {
+    device && device.send([0x90, key, clr]);
+}
+    
+function clearAll() {
+    for (let i = 0; i < 100; i++) {
+        colorKeys(i, 0)
+    }
+}
+
+function showSun() {
+    for (let i = 0; i < 100; i++) {
+        colorKeys(i, 79)
+    }
+
+    sun = [97, 98, 99, 93, 94, 95, 90, 91]
+    for (let i = 0; i < sun.length; i++) {
+        colorKeys(sun[i], 13)
+    }
+    clouds = [61, 56, 57, 58, 88, 55, 84, 85]
+    for (let i = 0; i < clouds.length; i++) {
+        colorKeys(clouds[i], 3)
+    }
+    grass = [40, 41, 42, 43, 72, 73, 74, 75, 36, 37, 38, 39, 68 , 69, 70, 71]
+    for (let i = 0; i < grass.length; i++) {
+        colorKeys(grass[i], 19)
+    }
+}
+
+function showClouds() {
+    for (let i = 0; i < 100; i++) {
+        colorKeys(i, 117)
+    }
+    clouds = [61, 56, 57, 58, 88, 55, 84, 85]
+    for (let i = 0; i < clouds.length; i++) {
+        colorKeys(clouds[i], 3)
+    }
+    grass = [40, 41, 42, 43, 72, 73, 74, 75, 36, 37, 38, 39, 68 , 69, 70, 71]
+    for (let i = 0; i < grass.length; i++) {
+        colorKeys(grass[i], 19)
+    }
 }
 
 function noteOn(note) {
     // console.log(note, "on");
-    if (note === 60) {
-        document.getElementById("output").innerHTML = "Note is on"
+    console.log(note);
+    if (note === 64) {
+        clearAll();
+    }
+    if (note === 65) {
+        showSun();
+    }
+    if (note === 66) {
+        showClouds();
     }
 }
 
 function noteOff(note) {
     // console.log(note, "off");
-    if (note === 60) {
-        document.getElementById("output").innerHTML = "Press 60"
-    }
 }
 
 function handleInput(input) {

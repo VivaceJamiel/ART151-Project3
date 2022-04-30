@@ -7,7 +7,7 @@ const getPicture = async (destination) => {
         alert("Please enter a destination");
     } else {
         console.log(destination);
-        const response = await fetch(`https://api.pexels.com/v1/search?query=${destination}&per_page=20`
+        const response = await fetch(`https://api.pexels.com/v1/search?query=${destination}&per_page=64`
         , {
             headers: {
                 Authorization: CONFIG.PEXEL_API_KEY,
