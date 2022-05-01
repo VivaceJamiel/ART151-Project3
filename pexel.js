@@ -14,7 +14,6 @@ const getPicture = async (destination) => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
             let tot = 0;
             for (let i = 0; i < 64; i++) {
                 if (tot === data.total_results) {

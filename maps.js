@@ -31,7 +31,7 @@ function geocodeAddress(destination) {
       <div style="display:flex; flex-direction: column; justify-content: center; align-items: center">
         <h3 style="text-align:center; margin-top:5; margin-bottom: 5;">${destination}</h3>
         <p>${results[0].formatted_address}</p>
-        <img src="${weather}">
+        <img src="${weather}" style="margin-botton: 5px;">
         <button onclick="go()" style="margin:auto">Let's Go</button>
       </div>`;
 

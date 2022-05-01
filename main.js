@@ -6,7 +6,6 @@ const getDestination = () => {
         getWeather(destination);
         geocodeAddress(destination);
         getPicture(destination);
-        displayWeather();
     }
 }
 
