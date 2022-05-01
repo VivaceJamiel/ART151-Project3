@@ -12,7 +12,6 @@ function geocodeAddress(destination) {
 
       let info = JSON.parse(window.sessionStorage.getItem("weather"));
 
-      console.log(info)
       let weather;
       if (info === "Clouds") {
         weather = "./icons/icons8-clouds-80.png";
