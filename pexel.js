@@ -6,7 +6,6 @@ const getPicture = async (destination) => {
     if (destination === "") {
         alert("Please enter a destination");
     } else {
-        console.log(destination);
         const response = await fetch(`https://api.pexels.com/v1/search?query=${destination}&per_page=64`
         , {
             headers: {
@@ -15,16 +14,16 @@ const getPicture = async (destination) => {
         })
         .then(res => res.json())
         .then(data => {
-            const randomPhoto = data.photos[Math.floor(Math.random() * data.photos.length)];
-            for (let i = 0; i < 20; i++) {
-                arr.push(data.photos[i].src.medium);
+            console.log(data)
+            let tot = 0;
+            for (let i = 0; i < 64; i++) {
+                if (tot === data.total_results) {
+                    tot = 0;
+                }
+                arr.push(data.photos[tot].src.medium);
+                tot = tot + 1;
             }
-            const photoUrl = randomPhoto.src.large;
-            const photo = document.createElement("img");
-            photo.src = photoUrl;
-            photo.alt = randomPhoto.photographer;
-            photo.title = randomPhoto.photographer;
-            window.sessionStorage.setItem("photos", arr);
+            window.sessionStorage.setItem("photos", JSON.stringify(arr));
         });
     }
 }

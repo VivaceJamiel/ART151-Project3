@@ -5,7 +5,8 @@ const getWeather = (destination) => {
     )
     .then(res => res.json())
     .then(data => {
-        console.log(data);
+        window.sessionStorage.setItem("weather", JSON.stringify(data.weather[0].main));
+        console.log(data.weather[0].main);
     });
 
 }

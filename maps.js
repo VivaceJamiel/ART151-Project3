@@ -10,11 +10,30 @@ function geocodeAddress(destination) {
           position: results[0].geometry.location
       });
 
+      let info = JSON.parse(window.sessionStorage.getItem("weather"));
+
+      console.log(info)
+      let weather;
+      if (info === "Clouds") {
+        weather = "./icons/icons8-clouds-80.png";
+      } else if (info === "Rain") {
+        weather = "./icons/icons8-heavy-rain-80.png";
+      } else if (info === "Snow") {
+        weather = "./icons/icons8-snow-80.png";
+      } else if (info === "Clear") {
+        weather = "./icons/icons8-sun-80.png";
+      } else if (info === "Haze") {
+        weather = "./icons/icons8-dust-80.png";
+      } else {
+        weather = "./icons/icons8-sun-80.png";
+      }
+
       let message = `
-      <div>
-        <h3>${destination}</h3>
+      <div style="display:flex; flex-direction: column; justify-content: center; align-items: center">
+        <h3 style="text-align:center; margin-top:5; margin-bottom: 5;">${destination}</h3>
         <p>${results[0].formatted_address}</p>
-        <button onclick="go()">Let's Go</button>
+        <img src="${weather}">
+        <button onclick="go()" style="margin:auto">Let's Go</button>
       </div>`;
 
       var infowindow = new google.maps.InfoWindow({

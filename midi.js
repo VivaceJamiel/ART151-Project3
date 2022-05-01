@@ -1,11 +1,15 @@
 let device
 
+function displayWeather() {
+    showSun();
+}
+
 if (navigator.requestMIDIAccess) {
     navigator.requestMIDIAccess().then(success, failure);
 }
 
 function updateDevices(event) {
-    console.log(event);
+    // console.log(event);
 }
 
 function failure() {
@@ -16,7 +20,6 @@ function success(midiAccess) {
     midiAccess.addEventListener("statechange", updateDevices);
     const inputs = midiAccess.inputs
     inputs.forEach((input) => {
-        console.log(input)
         input.addEventListener('midimessage', handleInput);
     })
     for (var output of midiAccess.outputs.values()) {
@@ -68,8 +71,6 @@ function showClouds() {
 }
 
 function noteOn(note) {
-    // console.log(note, "on");
-    console.log(note);
     if (note === 64) {
         clearAll();
     }

@@ -5,33 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collage</title>
+    <script src="./collage.js"></script>
     <style>
-        * {
+        html {
           box-sizing: border-box;
+          margin: 0;
+          overflow: hidden;
         }
         
         body {
           margin: 0;
           font-family: Arial, Helvetica, sans-serif;
-        }
-        
-        .header {
-          text-align: center;
-          padding: 32px;
+          background-image: url("./weather/sunny.webp");
+          background-size: contain;
         }
         
         .row {
-          display: -ms-flexbox; /* IE 10 */
           display: flex;
-          -ms-flex-wrap: wrap; /* IE 10 */
           flex-wrap: wrap;
           padding: 0 4px;
         }
         
         /* Create two equal columns that sits next to each other */
         .column {
-          -ms-flex: 25%; /* IE 10 */
-          flex: 25%;
+          flex: 10%;
           padding: 0 4px;
         }
         
@@ -39,62 +36,89 @@
           margin-top: 8px;
           vertical-align: middle;
         }
-        
-        /* Style the buttons */
-        .btn {
-          border: none;
-          outline: none;
-          padding: 10px 16px;
-          background-color: #f1f1f1;
-          cursor: pointer;
-          font-size: 18px;
-        }
-        
-        .btn:hover {
-          background-color: #ddd;
-        }
-        
-        .btn.active {
-          background-color: #666;
-          color: white;
-        }
     </style>
 </head>
 <body>
     <div class="row">
         <div class="column">
-          <img id="1" src="./pictures/index.png">
-          <img id="2" src="./pictures/index.png">
-          <img id="3" src="./pictures/index.png">
-          <img id="4" src="./pictures/index.png">
-          <img id="5" src="./pictures/index.png">
-          <img id="6" src="./pictures/index.png">
-          <img id="7" src="./pictures/index.png">
+          <img id="1" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="2" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="3" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="4" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="5" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="6" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="7" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="8" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
         </div>
         <div class="column">
-          <img id="8" src="./pictures/index.png">
-          <img id="9" src="./pictures/index.png">
-          <img id="10" src="./pictures/index.png">
-          <img id="11" src="./pictures/index.png">
-          <img id="12" src="./pictures/index.png">
-          <img id="13" src="./pictures/index.png">
+          <img id="9"  class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="10" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="11" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="12" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="13" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="14" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="15" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="16" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
         </div>
         <div class="column">
-          <img id="14" src="./pictures/index.png">
-          <img id="15" src="./pictures/index.png">
-          <img id="16" src="./pictures/index.png">
-          <img id="17" src="./pictures/index.png">
-          <img id="18" src="./pictures/index.png">
-          <img id="19" src="./pictures/index.png">
-          <img id="20" src="./pictures/index.png">
+          <img id="17" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="18" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="19" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="20" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="21" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="22" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="23" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="24" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
         </div>
         <div class="column">
-          <img id="21" src="./pictures/index.png">
-          <img id="22" src="./pictures/index.png">
-          <img id="23" src="./pictures/index.png">
-          <img id="24" src="./pictures/index.png">
-          <img id="25" src="./pictures/index.png">
-          <img id="26" src="./pictures/index.png">
+          <img id="25" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="26" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="27" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="28" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="29" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="30" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="31" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="32" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+        </div>
+        <div class="column">
+          <img id="33" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="34" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="35" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="36" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="37" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="38" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="39" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="40" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+        </div>
+        <div class="column">
+          <img id="41" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="42" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="43" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="44" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="45" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="46" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="47" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="48" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+        </div>
+        <div class="column">
+          <img id="49" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="50" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="51" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="52" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="53" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="54" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="55" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="56" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+        </div>
+        <div class="column">
+          <img id="57" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="58" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="59" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="60" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="61" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="62" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="63" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
+          <img id="64" class="image" src="./pictures/index.png" style="width: 100%; visibility: hidden;">
         </div>
       </div>
 </body>
