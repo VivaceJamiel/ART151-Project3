@@ -1,0 +1,27 @@
+html {
+    height: 100%;
+    width: 100%;
+    background-color: #4975dcbd;
+}
+
+.background{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.center{
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}

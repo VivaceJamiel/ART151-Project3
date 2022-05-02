@@ -4,28 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Let's go!</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="./config.js"></script>
-    <script src="./pexel.js" ></script>
-    <script src="./midi.js"></script>
-    <script src="./maps.js"></script>
-    <script src="./weather.js"></script>
-    <script src="./main.js"></script>
-    <link rel="stylesheet" href="./style.css">
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUWJszlLO6Zepi2yCqxSvUwaIJLz1Q2PE&callback=initMap"></script>
+    <link rel="stylesheet" href="./intro.css">
+    <script src="./intro.js"></script>
+    <title>Welcome!</title>
 </head>
 <body>
-    <div id="map"></div>
-    <div id="photo"></div>
-    <div id="config">
-        <table>
-            <tr>
-                <label for="destination">Destination</label>
-                <td><input class="ghost-input" type="text" id="destination"></td>
-            </tr>
-        </table>
-        <button class="btn" onclick="getDestination()"><span>Let's Go!</span></button>
+    <div class="background">
+        <div class="center">
+            <img src="./icons/Magnify-1s-200px.svg" alt="Loading" class="icon">
+            <h1>Loading...</h1>    
+        </div>
     </div>
 </body>
 </html>
