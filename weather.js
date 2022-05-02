@@ -8,6 +8,7 @@ const getWeather = (destination) => {
         window.sessionStorage.setItem("weather", JSON.stringify(data.weather[0].main));
         console.log(data.weather[0].main);
         displayWeather();
+        geocodeAddress(destination);
     });
 
 }

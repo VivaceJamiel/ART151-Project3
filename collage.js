@@ -1,4 +1,5 @@
 function init() {
+    alert("See the place you are in by pressing keys on the launchpad.")
     let pictures = JSON.parse(window.sessionStorage.getItem("photos"));
     for (let i = 1; i <= 64; i++) {
         document.getElementById(String(i)).src = pictures[i - 1];

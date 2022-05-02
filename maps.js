@@ -101,6 +101,8 @@ function initMap() {
       handleLocationError(false, infoWindow, map.getCenter());
     }
   });
+  alert("Let's take a trip!\nEnter a place you want to see and hit the button!\nHave fun!")
+
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {

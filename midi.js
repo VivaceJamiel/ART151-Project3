@@ -38,6 +38,7 @@ function success(midiAccess) {
     for (var output of midiAccess.outputs.values()) {
         device = output;
     }
+    clearAll();
 }
 
 function colorKeys(key, clr) {
@@ -129,19 +130,9 @@ function showThunder() {
 }
 
 function noteOn(note) {
-    if (note === 64) {
-        clearAll();
-    }
-    if (note === 65) {
-        showSun();
-    }
-    if (note === 66) {
-        showClouds();
-    }
 }
 
 function noteOff(note) {
-    // console.log(note, "off");
 }
 
 function handleInput(input) {
