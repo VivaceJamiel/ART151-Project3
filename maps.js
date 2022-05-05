@@ -21,7 +21,7 @@ function geocodeAddress(destination) {
         weather = "./icons/icons8-snow-80.png";
       } else if (info === "Clear") {
         weather = "./icons/icons8-sun-80.png";
-      } else if (info === "Haze") {
+      } else if (info === "Mist") {
         weather = "./icons/icons8-dust-80.png";
       } else {
         weather = "./icons/icons8-sun-80.png";
